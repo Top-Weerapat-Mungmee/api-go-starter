@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/scorpionknifes/gqlmanage/models"
-	"github.com/scorpionknifes/gqlmanage/mongodb"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/models"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/mongodb"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

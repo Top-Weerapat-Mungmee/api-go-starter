@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/scorpionknifes/gqlmanage/models"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/models"
 )
 
 // RoomLoaderConfig captures the config to create a new RoomLoader

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/scorpionknifes/gqlmanage/models"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/models"
 )
 
 // DeviceLoaderConfig captures the config to create a new DeviceLoader

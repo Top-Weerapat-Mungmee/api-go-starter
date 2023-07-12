@@ -12,7 +12,6 @@ require (
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d
 	github.com/pkg/errors v0.9.1
 	github.com/rs/cors v1.7.0
-	github.com/scorpionknifes/gqlmanage v0.0.0-20200803151020-84747826e62b
 	github.com/vektah/gqlparser/v2 v2.0.1
 	go.mongodb.org/mongo-driver v1.4.0
 	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de
