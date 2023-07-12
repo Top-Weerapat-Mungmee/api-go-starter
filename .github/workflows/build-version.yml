@@ -49,6 +49,12 @@ jobs:
       run: |
         go vet .
 
+    - name: Semantic Release
+      if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
+      uses: cycjimmy/semantic-release-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   # The "deploy" workflow
   deploy:
     # The type of runner that the job will run on
