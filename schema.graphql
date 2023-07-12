@@ -1,0 +1,151 @@
+# GraphQL
+scalar Time
+
+type AuthToken {
+  accessToken: String!
+  expiredAt: Time!
+}
+
+type AuthResponse {
+  authToken: AuthToken!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  username: String!
+  location: String!
+  abbr: String!
+  email: String!
+  openhab: String!
+}
+
+type Room {
+  id: ID!
+  roomNumber: String!
+  memo: String!
+  devices: [Device!]!
+  username: String!
+  password: String!
+  createdDate: Time!
+}
+
+type Device {
+  id: ID!
+  room: Room!
+  name: String!
+  model: String!
+  macAddress: String!
+  memo: String!
+  serialNumber: String!
+  status: Int!
+  type: Int!
+  createdDate: Time!
+  lastModified: Time!
+}
+
+type Email {
+  id: ID!
+  from: String!
+  to: String!
+  data: String!
+  createdDate: Time!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+input UserInput {
+  name: String!
+  username: String!
+  password: String!
+  location: String!
+  abbr: String!
+  email: String!
+  openhab: String!
+}
+
+input RoomInput {
+  roomNumber: String!
+  memo: String!
+  devices: [DeviceInput!]!
+  username: String!
+  password: String!
+}
+
+input DeviceInput {
+  roomID: String!
+  name: String!
+  model: String!
+  macAddress: String!
+  memo: String!
+  serialNumber: String!
+  status: Int!
+  type: Int!
+}
+
+input EmailInput {
+  from: String!
+  to: String!
+  data: String!
+}
+
+input UserUpdate {
+  name: String
+  username: String
+  password: String
+  location: String
+  abbr: String
+  email: String
+  openhab: String
+}
+
+input RoomUpdate {
+  roomNumber: String
+  memo: String
+  username: String
+  password: String
+}
+
+input DeviceUpdate {
+  name: String
+  model: String
+  macAddress: String
+  memo: String
+  serialNumber: String
+  status: Int
+  type: Int
+}
+
+input RoomFilter {
+    name: String
+}
+
+type Query {
+  emails: [Email!]!
+  email(id: ID!): Email!
+  users: [User!]!
+  user(id: ID!): User!
+  rooms(filter: RoomFilter, limit: Int = 10, offset: Int = 0): [Room!]!
+  room(id: ID!): Room!
+  devices: [Device!]!
+  device(id: ID!): Device!
+}
+
+type Mutation {
+  login(input: LoginInput!): AuthResponse!
+  createRoom(input: RoomInput!): Room!
+  updateRoom(id: ID!, input: RoomUpdate!): Room!
+  createDevice(input: DeviceInput!): Device!
+  updateDevice(id: ID!, input: DeviceUpdate!): Device!
+  createUser(input: UserInput!): User!
+  updateUser(id: ID!, input: UserUpdate!): User!
+  createEmail(input: EmailInput!): Email!
+}
+
+type Subscription {
+  newEmails: Email!
+}
