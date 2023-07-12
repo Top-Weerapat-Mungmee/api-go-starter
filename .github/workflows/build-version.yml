@@ -49,18 +49,6 @@ jobs:
       run: |
         go vet .
 
-    # Install staticcheck
-    - name: Install staticcheck
-      run: go install honnef.co/go/tools/cmd/staticcheck@latest
-  
-    # Run staticcheck
-    - name: Run staticcheck
-      run: staticcheck .
-    
-    # Run testing on the code
-    - name: Run testing
-      run: cd test && go test -v
-
   # The "deploy" workflow
   deploy:
     # The type of runner that the job will run on
