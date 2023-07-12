@@ -1,6 +1,6 @@
 package main
 
-import "github.com/scorpionknifes/gqlmanage/server"
+import "github.com/Top-Weerapat-Mungmee/api-go-starter/server"
 
 func main() {
 	server.Init()
