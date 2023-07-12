@@ -49,17 +49,18 @@ jobs:
       run: |
         go vet .
 
-    - name: Semantic Release
-      if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
-      uses: cycjimmy/semantic-release-action@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # The "deploy" workflow
-  deploy:
-    # The type of runner that the job will run on
+  release:
     runs-on: ubuntu-latest
-    needs: [build] # Only run this workflow when "build" workflow succeeds
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }} # Only run this workflow if it is master branch on push event
+    needs: build
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - uses: go-semantic-release/action@v1
+        with:
+          hooks: goreleaser
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
