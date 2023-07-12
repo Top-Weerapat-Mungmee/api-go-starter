@@ -11,14 +11,14 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler/lru"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/dataloader"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/graphql"
+	customMiddleware "github.com/Top-Weerapat-Mungmee/api-go-starter/middleware"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/mongodb"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/gorilla/websocket"
 	"github.com/rs/cors"
-	"github.com/scorpionknifes/gqlmanage/dataloader"
-	"github.com/scorpionknifes/gqlmanage/graphql"
-	customMiddleware "github.com/scorpionknifes/gqlmanage/middleware"
-	"github.com/scorpionknifes/gqlmanage/mongodb"
 )
 
 const defaultPort = "8080"
