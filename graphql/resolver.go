@@ -3,8 +3,8 @@
 package graphql
 
 import (
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/mongodb"
 	"github.com/go-redis/redis/v8"
-	"github.com/scorpionknifes/gqlmanage/mongodb"
 )
 
 // This file will not be regenerated automatically.

@@ -9,8 +9,8 @@ import (
 
 	uuid "github.com/nu7hatch/gouuid"
 
-	"github.com/scorpionknifes/gqlmanage/models"
-	"github.com/scorpionknifes/gqlmanage/server"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/models"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/server"
 )
 
 // Run this file by using

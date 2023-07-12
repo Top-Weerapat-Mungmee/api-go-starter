@@ -39,7 +39,7 @@ Need to insert first user to access API (TODO)
 ```bash
 go run ./main.go
 # OR
-go run github.com/scorpionknifes/gqlmanage
+go run github.com/Top-Weerapat-Mungmee/api-go-starter
 ```
 
 ### Notes

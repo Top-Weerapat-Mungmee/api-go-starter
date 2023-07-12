@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/scorpionknifes/gqlmanage/middleware"
-	"github.com/scorpionknifes/gqlmanage/models"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/middleware"
+	"github.com/Top-Weerapat-Mungmee/api-go-starter/models"
 )
 
 // Subscription returns SubscriptionResolver implementation.

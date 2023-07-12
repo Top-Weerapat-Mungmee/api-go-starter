@@ -34,7 +34,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 #autobind:
-#  - "github.com/scorpionknifes/gqlmanage/model"
+#  - "github.com/Top-Weerapat-Mungmee/api-go-starter/model"
 
 # This section declares type mapping between the GraphQL and go type systems
 #
@@ -43,16 +43,16 @@ resolver:
 # your liking
 models:
   User:
-    model: github.com/scorpionknifes/gqlmanage/models.User
+    model: github.com/Top-Weerapat-Mungmee/api-go-starter/models.User
   Email: 
-    model: github.com/scorpionknifes/gqlmanage/models.Email
+    model: github.com/Top-Weerapat-Mungmee/api-go-starter/models.Email
   Device:
-    model: github.com/scorpionknifes/gqlmanage/models.Device
+    model: github.com/Top-Weerapat-Mungmee/api-go-starter/models.Device
     fields:
       room:
         resolver: true
   Room:
-    model: github.com/scorpionknifes/gqlmanage/models.Room
+    model: github.com/Top-Weerapat-Mungmee/api-go-starter/models.Room
     fields:
       devices:
         resolver: true
