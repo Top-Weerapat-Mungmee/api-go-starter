@@ -34,7 +34,7 @@ Need to insert first user to access API (TODO)
 ##### Run server
 
 - default port :8000
-- GraphQL Playground default url http://localhost:8080
+- GraphQL Playground default url http://localhost:8000
 
 ```bash
 go run ./main.go
