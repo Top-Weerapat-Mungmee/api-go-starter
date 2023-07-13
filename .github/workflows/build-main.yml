@@ -24,17 +24,33 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   release:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment:
+      name: "test"
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Pre-release
+        uses: haya14busa/action-cond@v1
+        id: condval
+        with:
+          cond: ${{ github.ref == 'refs/heads/alpha' }}
+          if_true: true
+          if_false: false
+
+      - name: Setup Go
+        uses: actions/setup-go@v3
         with:
           go-version: 1.19
-      - uses: go-semantic-release/action@v1
+
+      - name: Semantic Version
+        uses: go-semantic-release/action@v1
         with:
           hooks: goreleaser
-          prerelease: true
+          prerelease: ${{ steps.condval.outputs.value }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
