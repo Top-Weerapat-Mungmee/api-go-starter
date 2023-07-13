@@ -34,6 +34,6 @@ jobs:
       - uses: go-semantic-release/action@v1
         with:
           hooks: goreleaser
-          prerelease: 'alpha'
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
