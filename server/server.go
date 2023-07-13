@@ -23,6 +23,10 @@ import (
 
 const defaultPort = "8080"
 
+func healthCheck(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("OK"))
+}
+
 // Init start server
 func Init() {
 	// get .env config
@@ -109,6 +113,7 @@ func Init() {
 
 	router.Handle("/", playground.Handler("GraphQL playground", "/graphql"))
 	router.Handle("/graphql", srv)
+	router.Get("/health-check", healthCheck)
 
 	log.Printf("connect to %s for GraphQL playground", os.Getenv("CORS_DEFAULT"))
 	log.Fatal(http.ListenAndServe(":"+port, router))
