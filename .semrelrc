@@ -1,3 +1,11 @@
 {
-  "maintainedVersion": "1-alpha"
+  "maintainedVersion": "2-beta",
+  "plugins": {
+    "provider": {
+      "name": "github",
+      "options": {
+        "prerelease": true
+      }
+    }
+  }
 }
